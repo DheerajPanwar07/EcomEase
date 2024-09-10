@@ -1,0 +1,43 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Update Product</h2>
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" >
+    <div class="mb-3">
+      <label for="id" class="form-label">ProductID</label>
+      <input id="id" formControlName="id" type="text" class="form-control" placeholder="Enter product ID" required>
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input id="name" formControlName="name" type="text" class="form-control" placeholder="Enter product name" required>
+      
+    </div>
+  
+    <div class="mb-3">
+      <label for="price" class="form-label">Price</label>
+      <input id="price" formControlName="price" type="text" class="form-control" placeholder="Enter product price" required>
+     
+    </div>
+  
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea id="description" formControlName="description" class="form-control" placeholder="Enter product description" rows="4" required></textarea>
+      
+    </div>
+  
+    <div class="mb-3">
+      <label for="quantity" class="form-label">Quantity</label>
+      <input id="quantity" formControlName="quantity" type="text" class="form-control" placeholder="Enter product quantity" required>
+
+    </div>
+  
+    <div class="mb-3">
+      <label for="sellerId" class="form-label">Seller ID</label>
+      <input id="sellerId" formControlName="sellerId" type="text" class="form-control" placeholder="Enter seller ID" required>
+      
+    </div>
+  
+    <div class="d-flex justify-content-between">
+      <button type="submit" class="btn btn-primary" [disabled]="productForm.invalid">Submit</button>
+      <a routerLink="/sellerlogin" class="btn btn-secondary">Return to Product List</a>
+    </div>
+  </form>
+</div>

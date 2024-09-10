@@ -1,0 +1,17 @@
+.bg-black {
+  background-color: black !important;
+  color: white !important;
+}
+
+.bg-black .navbar-nav .nav-link,
+.bg-black .navbar-brand,
+.bg-black .dropdown-menu,
+.bg-black .dropdown-item,
+.bg-black .btn-outline-success {
+  color: white !important;
+  border-color: white !important; /* For the outline button */
+}
+
+.bg-black .navbar-toggler-icon {
+  filter: invert(1); /* This will make the navbar-toggler icon white */
+}

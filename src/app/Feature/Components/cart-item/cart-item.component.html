@@ -1,0 +1,25 @@
+
+  <div *ngIf="cartItems.length > 0; else emptyCart" class="cart-container">
+    <h2>Cart Items</h2>
+    <div class="cart-grid">
+      <div class="cart-item" *ngFor="let item of cartItems">
+        <div class="item-details">
+          <h3>{{ item.name }}</h3>
+          <p><strong>Price:</strong> {{ item.price }} USD</p>
+          <p><strong>Description:</strong> {{ item.description }}</p>
+          <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+          <p><strong>Seller ID:</strong> {{ item.sellerId }}</p>
+        </div>
+        <button class="remove-btn" (click)="removeItem(item.productId)">Remove</button>
+      </div>
+    </div>
+    <button class="clear-btn" (click)="clearCart()">Clear Cart</button>
+  </div>
+  
+  <ng-template #emptyCart>
+    <p>Your cart is empty.</p>
+  </ng-template>
+  
+ 
+  
+  

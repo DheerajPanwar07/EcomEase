@@ -1,0 +1,37 @@
+<table>
+    <thead>
+      <tr>
+        <th>User ID</th>
+        <th>UserName</th>
+        <th>Email</th>
+       
+        <th>Contact</th>
+        <th>Addresh</th>
+        
+        <th>RoleName</th>
+       
+        <th>Status</th>
+        <th>Action </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let registration of Detials">
+        <td>{{ registration.userID }}</td>
+        <td>{{ registration.userName }}</td>
+        <td>{{ registration.email }}</td>
+        <td>{{ registration.contact }}</td>
+
+        <td>{{ registration.addresh }}</td>
+        <td>{{ registration.roleName }}</td>
+        
+      
+        <td>{{ registration.isActive ? 'Active' : 'Inactive' }}</td> 
+        <td>
+          <!-- Add buttons for Activate/Deactivate -->
+          <button type="button" class="btn btn-success" *ngIf="!registration.isActive" (click)="changeStatus(registration.userID, true)">Activate</button>
+          <button type="button" class="btn btn-danger" *ngIf="registration.isActive" (click)="changeStatus(registration.userID, false)">Deactivate</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

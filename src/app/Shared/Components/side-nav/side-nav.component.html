@@ -1,0 +1,14 @@
+ <div class="row">
+    <div class="col">
+      <div ngbDropdown class="d-inline-block">
+        <button type="button" class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle >
+          Product
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button  ngbDropdownItem  (click)="onsubmit()">ViewProduct</button>
+          <button  ngbDropdownItem  (click)="Addproduct()">Addproduct</button>
+          <button  ngbDropdownItem  (click)="Editproduct()">UpdateProduct</button>
+          </div>
+      </div>
+    </div> 
+    

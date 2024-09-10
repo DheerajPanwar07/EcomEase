@@ -1,0 +1,40 @@
+
+  <div *ngIf="profile" class="profile-container">
+    <div class="card profile-card">
+      <div class="card-header text-center bg-primary text-white">
+        <h2>Welcome: {{ profile.name }}</h2>
+      </div>
+      <div class="card-body">
+        <p><strong>Role:</strong> {{ rolename }}</p>
+        <p><strong>Email:</strong> {{ profile.email }}</p>
+        <p><strong>Contact:</strong> {{ profile.contact }}</p>
+        <p><strong>Address:</strong> 
+          {{ profile.addresh }}, {{ profile.city }}, {{ profile.state }}, {{ profile.country }}
+        </p>
+      </div>
+    </div>
+  
+    <div class="actions-container mt-4 text-center">
+      <button 
+        class="btn btn-outline-primary mx-2" 
+        *ngIf="rolename === 'Admin'" 
+        (click)="showUserDetails()">
+        <i class="bi bi-person-circle"></i> Show User Details
+      </button>
+  
+      <button 
+        class="btn btn-outline-success mx-2" 
+        *ngIf="rolename === 'Seller'" 
+        (click)="showSellerProducts()">
+        <i class="bi bi-bag"></i> Show All Products
+      </button>
+  
+      <button 
+        class="btn btn-outline-info mx-2" 
+        *ngIf="rolename === 'Buyer'" 
+        (click)="goToBuyerComponent()">
+        <i class="bi bi-cart"></i> Browse Products
+      </button>
+    </div>
+  </div>
+  

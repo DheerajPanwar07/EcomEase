@@ -1,0 +1,127 @@
+<div class="rform">
+  <section>
+    <header>Registration Form</header>
+    <br />
+
+    <form #basicForm="ngForm">
+      <p>
+        <label for="name">First Name </label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          [(ngModel)]="userData.name"
+          #firstname="ngModel"
+        />
+        <span *ngIf="!firstname.valid && firstname.touched"
+          >please fill the firstname</span
+        >
+      </p>
+
+      <p>
+        <label for="rolename">rolename: </label>
+        <select
+          id="rolename"
+          name="rolename"
+          required
+          [(ngModel)]="userData.rolename"
+          #rolename="ngModel"
+        >
+          <option value="Admin">Admin</option>
+          <option value="Seller">Seller</option>
+          <option value="Buyer">Buyer</option>
+        </select>
+        <span *ngIf="!rolename.valid && rolename.touched">Enter country</span>
+      </p>
+
+      <p>
+        <label for="email">Email </label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          required
+          [(ngModel)]="userData.email"
+          #email="ngModel"
+        />
+        <span *ngIf="!email.valid && email.touched">fill this email</span>
+      </p>
+
+      <p>
+        <label for="contact">contact </label>
+        <input
+          type="text"
+          id="contact"
+          name="contact"
+          required
+          [(ngModel)]="userData.contact"
+          #contact="ngModel"
+        />
+        <span *ngIf="!contact.valid && contact.touched"
+          >please fill the contact</span
+        >
+      </p>
+
+      <p>
+        <label for="addresh">addresh</label>
+        <input
+          type="text"
+          id="addresh"
+          name="addresh"
+          required
+          [(ngModel)]="userData.addresh"
+          #addresh="ngModel"
+        />
+        <span *ngIf="!addresh.valid && addresh.touched" style="color: red">
+          fill the addresh</span
+        >
+      </p>
+
+      <p>
+        <label for="city">city </label>
+        <input
+          type="text"
+          id="city"
+          name="city"
+          required
+          [(ngModel)]="userData.city"
+          #city="ngModel"
+        />
+        <span *ngIf="!city.valid && city.touched">Enter city</span>
+      </p>
+      <p>
+        <label for="state">state </label>
+        <input
+          type="text"
+          id="state"
+          name="state"
+          required
+          [(ngModel)]="userData.state"
+          #state="ngModel"
+        />
+        <span *ngIf="!state.valid && state.touched">Enter state</span>
+      </p>
+
+      <p>
+        <label for="country">country </label>
+        <input
+          type="text"
+          id="country"
+          name="country"
+          required
+          [(ngModel)]="userData.country"
+          #country="ngModel"
+        />
+        <span *ngIf="!country.valid && country.touched">Enter country</span>
+      </p>
+      <p>
+        <button type="submit" (click)="setData()" [disabled]="!basicForm.valid">
+          Submit
+        </button>
+        <a href="#home" style="color: #393f81">Return to login</a>
+      </p>
+    </form>
+  </section>
+</div>
+<div></div>
